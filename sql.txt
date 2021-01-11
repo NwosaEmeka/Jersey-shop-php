@@ -1,0 +1,92 @@
+
+SQL
+
+CREATE TABLE admin (
+    admin_id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    name VARCHAR(200) NOT NULL
+    )ENGINE=INNODB;
+    
+
+
+CREATE TABLE products(
+    product_id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    product_name VARCHAR(255) NOT NULL,
+    product_desc TEXT NOT NULL,
+    product_img VARCHAR(255) NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    club VARCHAR(200) NOT NULL,
+    brand VARCHAR(200) NOT NULL,
+    quantity INTEGER NOT NULL,
+    admin_id INTEGER,
+    CONSTRAINT FOREIGN KEY (admin_id) REFERENCES admin (admin_id)
+    ON DELETE CASCADE ON UPDATE CASCADE
+    )ENGINE=INNODB;
+    
+
+
+CREATE TABLE customers(
+    customer_id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    fname VARCHAR(150) NOT NULL,
+    lname VARCHAR(150) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    pswd VARCHAR(255) NOT NULL
+    )ENGINE=INNODB;
+
+CREATE TABLE address( 
+    address_id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+    customer_id INTEGER, 
+    address1 VARCHAR(255) NOT NULL, 
+    address2 VARCHAR(255), 
+    city VARCHAR(60) NOT NULL, 
+    state VARCHAR(60) NOT NULL, 
+    zip VARCHAR(10) NOT NULL, 
+    phone_no VARCHAR(15) NOT NULL, 
+    CONSTRAINT FOREIGN KEY (customer_id) REFERENCES customers (customer_id) 
+    ON DELETE CASCADE ON UPDATE CASCADE 
+   )ENGINE=INNODB;
+
+CREATE TABLE status(
+    status_id INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    status_desc VARCHAR(150)
+    )ENGINE=INNODB;
+    
+INSERT INTO status(status_desc) VALUES
+("PROCESSING"),
+("PENDING PAYMENT"),
+("SHIPPED"),
+("COMPLETED"),
+("CANCELED");
+
+CREATE TABLE orders(
+    order_id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    customer_id INTEGER NOT NULL,
+    status_id INTEGER NOT NULL,
+    order_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    
+    CONSTRAINT FOREIGN KEY (customer_id) REFERENCES customers (customer_id)
+    ON DELETE CASCADE ON UPDATE CASCADE,
+    
+    CONSTRAINT FOREIGN KEY (status_id) REFERENCES status (status_id)
+    ON DELETE CASCADE ON UPDATE CASCADE
+    )ENGINE=INNODB;
+
+CREATE TABLE orderitem(
+    item_id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    order_id INTEGER NOT NULL,
+    product_id INTEGER NOT NULL,
+    quantity INTEGER NOT NULL,
+    unit_price DECIMAL(10,2) NOT NULL,
+    sub_total DECIMAL(10,2) NOT NULL,
+    
+    CONSTRAINT FOREIGN KEY (product_id) REFERENCES products (product_id)
+    ON DELETE CASCADE ON UPDATE CASCADE,
+    
+    CONSTRAINT FOREIGN KEY (order_id) REFERENCES orders (order_id)
+    ON DELETE CASCADE ON UPDATE CASCADE
+    
+    )ENGINE=INNODB;
+
+
+

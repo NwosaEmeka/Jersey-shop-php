@@ -1,0 +1,140 @@
+.cart_wrapper{
+  width: 100%;
+  padding: 2rem;
+}
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+th{
+  text-align: left;
+  padding:1rem 0.5rem;
+  font-size: 0.9rem;
+}
+td{
+  padding: 0.5rem;
+  padding-bottom: 1.5rem;
+}
+tbody tr{
+  text-align: left;
+  border-bottom: 1px solid #c0c0c0;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+tbody tr:last-child{
+  border-bottom: none;
+}
+thead{
+  background-color: rgb(166, 222, 244);
+  color:rgb(24, 98, 125);
+}
+.item__detail{
+  display: flex;
+  align-items: center;
+}
+.item__detail img{
+  width: 3.2rem;
+  padding: 0.5rem;
+  border: 1px solid #eee;
+  margin-right: 0.2rem;
+  display: inline-block;
+}
+.item__detail p{
+  color:rgb(43,176,227);
+}
+.count__btn,
+.remove__btn{
+  padding: 0.4rem 0.8rem;
+  cursor:pointer;
+}
+.remove__btn{
+  background-color: red;
+  border:1px solid red;
+  color: #fff;
+  margin-left: 0.5rem;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+}
+.remove__btn:hover{
+  opacity:0.7;
+}
+.item__count{
+  margin: 0 0.6rem;
+}
+.final_price{
+  background-color: #eee;
+  padding: 1.5rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: flex-end;
+}
+.final_price >p{
+  margin-right: 3rem;
+}
+.ctc__btn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.ctc{
+  color: #fff;
+  padding: 0.8rem 0.5rem;
+  margin: 0.5rem 0;
+  display: inline-block;
+  border-radius:8px;
+  -webkit-border-radius:8px;
+  -moz-border-radius:8px;
+  -ms-border-radius:8px;
+  -o-border-radius:8px;
+}
+
+.cart__header{
+  text-align: center;
+  padding: 0.8rem 0;
+  background-color: rgb(43, 176, 227);
+  color: #fff;
+  font-size:1rem;
+}
+
+@media(max-width: 50rem){
+  .items__wrapper{
+  padding: 2rem 1rem;
+}
+  .unit__price-data{
+    display: none;
+  }
+  .item__detail{
+  display: block;
+  max-width:11rem;
+}
+}
+@media(max-width:27rem){
+  .remove__btn{
+    width: 50%;
+    margin-top: 0.8rem;
+    margin-left: 20%;
+  }
+  .ctc__btn{
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width:22rem){
+
+  .count__btn,
+  .remove__btn{
+  padding: 0.2rem 0.4rem;
+}
+  .item__count{
+  margin:0 0.3rem;
+}
+
+}
