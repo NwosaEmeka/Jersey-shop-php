@@ -21,4 +21,12 @@ cart, checkout)
 - Filter products
 
 ## NOTE
-This is part of assignment for my web development class so the code might not look great or performant since I have to include everything learnt in this course
+This is part of assignment for my web development class so the code might not look great or performant since I have to include everything learnt in this course which includes:
+
+- HTML
+- CSS
+- JavaScript
+- JQuery
+- JSON
+- PHP
+- MYSQL
