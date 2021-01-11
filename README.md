@@ -16,9 +16,9 @@ EMS Jersey shop is created with PHP and MYSQL
 cart, checkout)
 
 
-##Proposed Todo
+## Proposed Todo
 - Integrate with stripe for payment processing
 - Filter products
 
-##NOTE
+## NOTE
 This is part of assignment for my web development class so the code might not look great or performant since I have to include everything learnt in this course
