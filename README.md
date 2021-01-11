@@ -1,8 +1,10 @@
 # EMS-shop-php
 
-My attempt to recreate [Gaffer Jersey Shop](https://gaffer-jersey.herokuapp.com/) using PHP and MYSQL
+My attempt to recreate my previous [Gaffer Jersey Shop](https://gaffer-jersey.herokuapp.com/) using PHP and MYSQL.
 
-The PhP version is hosted here [EMS JERSEY](https://ems-jersey.000webhostapp.com/)
+Click [Here](https://github.com/NwosaEmeka/gaffer-jersey-shop) to checkout the github of Gaffer Jersey Shop
+
+The PHP version is hosted here [EMS JERSEY](https://ems-jersey.000webhostapp.com/)
 
 Gaffer Jersey Shop was created with React, Node as backend and firebase 
 for authentication and storage.
