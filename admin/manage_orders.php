@@ -58,7 +58,7 @@ $stmt = null;
               <a href="edit_order.php?id=<?= $order['order_id'] ?>" class="act act__ed">
                 <i class="far fa-edit"></i>
               </a>
-              <a href="delete_order.php?id=<?= $product['order_id'] ?>"
+              <a href="delete_order.php?id=<?= $order['order_id'] ?>"
                 onclick="return confirm('Are you sure you want to delete this order?')" class="act act__del">
                 <i class="far fa-trash-alt"></i>
               </a>

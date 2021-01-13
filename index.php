@@ -15,7 +15,7 @@ include_once "./config/pdo.php";
   <?php
   include_once "header.php"
   ?>
-
+  <div class="preloader"></div>
   <div class="hero">
     <h1 class="hero_text">20/21 SEASON JERSEY</h1>
   </div>

@@ -16,6 +16,23 @@ text-decoration: none;
 ul{
   list-style: none;
 }
+/* pre loader */
+.preloader{
+  display: none;
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index: 1000;
+  background:url("loader.gif")#fff no-repeat center;
+}
+body.loading{
+  overflow: hidden;
+}
+body.loading .preloader{
+  display:block;
+}
 /* header.php */
 .header{
   position: sticky;
@@ -119,7 +136,7 @@ color:rgb(239,87,0);
 .hero{
   width:100%;
   height: 10rem;
-  background: url("./images/banner.jpg") no-repeat center center/cover;
+  background: url("banner.jpg") no-repeat center center/cover;
   position: relative;
   display: flex;
   align-items: center;

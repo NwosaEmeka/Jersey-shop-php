@@ -1,8 +1,17 @@
 // Using JQuery to fetch items
 let output = ""
 
-$.getJSON('fetch_products.php', function(data){
-  $.each(data, function (key, value) {
+$("body").addClass("loading");
+
+// Immediately invoked function expression IIFE
+(function () {
+  $.getJSON('fetch_products.php', {
+    format: "json"
+  })
+    .done(function (data) {
+      $.each(data, function (key, value) {
+        $("body").removeClass("loading");
+        isloading = false;
     // console.log(value)
     // destructuring
     const { product_id, product_name, product_desc, product_img, price, quantity} = value
@@ -26,11 +35,13 @@ $.getJSON('fetch_products.php', function(data){
       </div>
     </div>
     `
-  })
-  $(".items_container").html(output)
-})
-    
-
+      })
+      $(".items_container").html(output);
+    })
+    .fail(function (err) {
+      console.log(err)
+    })
+})()
 
 // Using vanilla javascript ES-6 fetch
 
