@@ -47,6 +47,5 @@ if (empty($user)) {
     }
   }
   header("Location: index.php");
-  return;
 }
 ?>

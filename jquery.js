@@ -11,7 +11,6 @@ $("body").addClass("loading");
     .done(function (data) {
       $.each(data, function (key, value) {
         $("body").removeClass("loading");
-        isloading = false;
     // console.log(value)
     // destructuring
     const { product_id, product_name, product_desc, product_img, price, quantity} = value
